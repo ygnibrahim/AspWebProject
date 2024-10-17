@@ -12,5 +12,10 @@ namespace AspWebProject.Models
         [Required(ErrorMessage = "Age alanı boş bırakılamaz")]
         public int Age { get; set; }
         public DateTime? BirthDay { get; set; }
+
+        public string GetFullName()
+        {
+            return $"{Name}--{Email}--{Age}";
+        }
     }
 }
