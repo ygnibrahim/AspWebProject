@@ -23,6 +23,16 @@ namespace AspWebProject.Controllers
             _mapper = mapper;
         }
 
+
+        [Route("MappingExample")]
+        [HttpGet]
+        public ActionResult MappingExample()
+        {
+            Customer customer = new Customer { Id=44,Name="example",Email="example@gmail.com",Age=100};
+
+            return Ok(_mapper.Map<CustomerDto>(customer));
+        }
+
         // GET: api/CustomersApi
         [HttpGet]
         public async Task<ActionResult<List<CustomerDto>>> GetCustomers()
