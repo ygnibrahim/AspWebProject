@@ -1,0 +1,14 @@
+﻿@model AspWebProject.Models.Customer
+
+<h1> Customer Details</h1>
+
+<div>
+    <h4>@Model.Name</h4>
+    <div>
+        <p><strong>Email:</strong>@Model.Email</p>
+        <p><strong>Age</strong>@Model.Age</p>
+    </div>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back To List</a>

@@ -1,0 +1,18 @@
+﻿@model AspWebProject.Models.Customer
+
+<h1>Delete Customer</h1>
+
+<h3>Are you sure you want to delete this customer?</h3>
+<div>
+    <h4>@Model.Name</h4>
+    <div>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Age:</strong> @Model.Age</p>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">No, Cancel</a>
+    </form>
+</div>
