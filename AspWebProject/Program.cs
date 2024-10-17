@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using AspWebProject.FluentValidators;
+using AspWebProject.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
     
 });
+
+builder.Services.AddAutoMapper(typeof(MapProfile));
+
 
 var app = builder.Build();
 
