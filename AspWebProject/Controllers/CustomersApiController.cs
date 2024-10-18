@@ -28,7 +28,14 @@ namespace AspWebProject.Controllers
         [HttpGet]
         public ActionResult MappingExample()
         {
-            Customer customer = new Customer { Id=44,Name="example",Email="example@gmail.com",Age=100};
+            Customer customer = new Customer
+            {
+                Id = 10,
+                Name = "example",
+                Email = "example@gmail.com",
+                Age = 25,
+                CreditCard = new CreditCard { Number = "NumberOne", ValidDate = DateTime.Today }
+            };
 
             return Ok(_mapper.Map<CustomerDto>(customer));
         }
@@ -37,9 +44,9 @@ namespace AspWebProject.Controllers
         [HttpGet]
         public async Task<ActionResult<List<CustomerDto>>> GetCustomers()
         {
-            List<Customer> customers= await _context.Customers.ToListAsync();
+            List<Customer> customers = await _context.Customers.ToListAsync();
 
-            return _mapper.Map<List<CustomerDto>>(customers);   
+            return _mapper.Map<List<CustomerDto>>(customers);
 
         }
 

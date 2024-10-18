@@ -13,6 +13,8 @@ namespace AspWebProject.Models
         public int Age { get; set; }
         public DateTime? BirthDay { get; set; }
 
+        public CreditCard CreditCard { get; set; }
+
         public string GetFullName()
         {
             return $"{Name}--{Email}--{Age}";
