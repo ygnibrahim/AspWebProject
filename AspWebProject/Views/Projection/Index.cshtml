@@ -1,0 +1,23 @@
+﻿@model AspWebProject.DTOs.EventDateDto
+
+<h1>Event Model</h1>
+
+<form asp-action="Index">
+    <div>
+        <div>
+            <p1>Day</p1>
+            <input asp-for="Day" />
+        </div>
+        <div>
+            <p1>Month</p1>
+            <input asp-for="Month" />
+        </div>
+        <div>
+            <p1>Year</p1>
+            <input asp-for="Year" />
+        </div>
+        <input type="submit" value="Save" />
+    </div>
+</form>
+
+<h1>@ViewBag.Date</h1>
