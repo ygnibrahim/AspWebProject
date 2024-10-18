@@ -19,7 +19,7 @@ namespace AspWebProject.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index(EventDateDto eventDateDto)
+        public IActionResult Post(EventDateDto eventDateDto)
         {
             EventDate eventDate= _mapper.Map<EventDate>(eventDateDto);
 
