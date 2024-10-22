@@ -1,4 +1,5 @@
 using AspNetCoreRateLimit;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,12 @@ builder.Services.AddSingleton<IRateLimitConfiguration,RateLimitConfiguration>();
 builder.Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
 
 var app = builder.Build();
+
+using(var scope= app.Services.CreateScope())
+{
+    var IpPolicy= scope.ServiceProvider.GetRequiredService<IIpPolicyStore>();   
+    IpPolicy.SeedAsync().Wait();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
