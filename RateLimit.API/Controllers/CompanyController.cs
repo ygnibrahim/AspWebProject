@@ -12,6 +12,12 @@ namespace RateLimit.API.Controllers
             return Ok(new { Id = 1, Name = "Tesla", Date = DateTime.Now.ToString() });
         }
 
+        [HttpGet("{name}/{price}")]
+        public IActionResult GetCompany(string name,int price)
+        {
+            return Ok(name);
+        }
+
         [HttpPost]
         public IActionResult SaveCompany()
         {
