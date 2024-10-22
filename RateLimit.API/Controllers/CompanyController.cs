@@ -17,5 +17,11 @@ namespace RateLimit.API.Controllers
         {
             return Ok(new { Id = 1, CompanyName = "Renault", Date = DateTime.Now.ToString() });
         }
+
+        [HttpPut]
+        public IActionResult PutCompany()
+        {
+            return Ok();
+        }
     }
 }
