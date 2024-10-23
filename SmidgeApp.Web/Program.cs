@@ -29,6 +29,8 @@ app.UseAuthorization();
 app.UseSmidge(bundle =>
 {
     bundle.CreateJs("my-js-bundle", "~/js/site.js", "~/js/site2.js");
+
+    bundle.CreateCss("my-css-bundle", "/~css/site.css", "~/lib/bootstrap/dist/css/bootstrap.min.css");
 });
 
 app.MapControllerRoute(
